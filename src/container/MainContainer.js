@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-import Note from '../component/Note';
+// import Note from '../component/Note';
 import RouterContainer from '../component/Router'
 import './Main.css'
 
@@ -9,9 +9,12 @@ class MainContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      notes: [{text: "Item 1", done: false},
-      {text: "Item 2", done: false},
-      {text: "Item 3", done: false}],
+      notes: [
+        {text: "item 1", done: false},
+        {text: "item 2", done: false},
+        {text: "item 3", done: true},
+        {text: "item 4", done: true},
+      ],
       value: '',
     };
 
@@ -59,18 +62,7 @@ class MainContainer extends React.Component {
             value = { this.state.value }
             onChange={ this.handleInput }/>
             <button onClick={ this.addNote } className="add__button">Add</button>
-          </div>  
-          <div className="notes">
-            <p>Let's get some work done!</p>
-            {this.state.notes.map((item, index) => {
-              return(<Note
-                key = {index}
-                note = {item}
-                deleteNote = {() => this.deleteNote(index)}
-                selectNote = {() => this.selectNote(index)}
-              />
-              );})}
-          </div>
+          </div> 
           <RouterContainer notes = { this.state.notes }/>
         </Fragment>
     );

@@ -1,7 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-import Note from './Note'
+import All from './All'
+import Complete from './Complete'
+import Incomplete from './Incomplete'
+import '../container/Main.css'
 
 class RouterContainer extends React.Component {
 
@@ -10,29 +13,20 @@ class RouterContainer extends React.Component {
     this.state = {};
   }
 
-  // deleteNote = index => {
-  //   const data = this.state.notes;
-  //   data.splice(index,1)
-  //   this.setState([data]);
-  // };
-
-  // selectNote = index => {
-  //   const data = this.state.notes;
-  //   if(data[index].done) data[index].done = false;
-  //   else data[index].done = true;
-  //   this.setState([data]);
-  // };
-
   showAll = () => {
-    console.log(this.props.notes)
-    this.props.notes.map((item, index) => {
-        return(<Note
-          key = {index}
-          note = {item}
-          deleteNote = {() => this.deleteNote(index)}
-          selectNote = {() => this.selectNote(index)}
-        />
-        );})
+    return(<All 
+      notes = {this.props.notes}
+
+    />)
+  }
+
+  showComplete = () => {
+    let arr = this.props.notes.filter(item => item.done === true);
+    return(<Complete notes = {arr} />)
+  }
+  showIncomplete = () => {
+    let arr = this.props.notes.filter(item => item.done === false);
+    return(<Incomplete notes = {arr} />)
   }
 
 
@@ -40,71 +34,27 @@ class RouterContainer extends React.Component {
     return (
         <div>
           <Router>
-            <div>
+            <div className="router">
+              <p>Let's get some work done!</p>
               <ul>
                 <li>
-                  <Link to="/">All</Link>
+                  <Link className="li" to="/All">All</Link>
                 </li>
                 <li>
-                  <Link to="/complete">Complete</Link>
+                  <Link className="li" to="/complete">Complete</Link>
                 </li>
                 <li>
-                  <Link to="/incomplete">Incomplete</Link>
+                  <Link className="li" to="/incomplete">Incomplete</Link>
                 </li>
               </ul>
-              <Route path="/" component={this.showAll} />
-              <Route path="/complete" component={Complete} />
-              <Route path="/incomplete" component={Incomplete} />
+              <Route path="/All" component={this.showAll} />
+              <Route path="/complete" component={this.showComplete} />
+              <Route path="/incomplete" component={this.showIncomplete} />
             </div>
           </Router>
         </div>
     );
   }
 }
-
-
-function All () {
-  // let filterComplete = this.props.notes.filter(item => item.done === true);
-  // let filterIncomplete = this.props.notes.filter(item => item.done === false);
-  console.log(RouterContainer.props.notes);
-  return(
-    <div>All
-    </div>
-  );
-}
-
-function Complete () {
-  return(
-    <div>Complete
-    </div>
-  );
-}
-
-function Incomplete () {
-  return(
-    <div>Incomplete
-    </div>
-  );
-}
-
-
-// {this.props.notes.map((item, index) => {
-//   return(<Note
-//     key = {index}
-//     note = {item}
-//     deleteNote = {() => this.deleteNote(index)}
-//     selectNote = {() => this.selectNote(index)}
-//   />
-//   );})}
-
-// this.state.notes.filter(item => item.done === true).map((item, index) => {
-//   return(<Note
-//     key = {index}
-//     note = {item}
-//     deleteNote = {() => this.deleteNote(index)}
-//     selectNote = {() => this.selectNote(index)}
-// />
-//       );})}
-
 
 export default RouterContainer;
