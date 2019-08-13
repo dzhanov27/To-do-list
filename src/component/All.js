@@ -7,6 +7,7 @@ class All extends React.Component {
   state ={
     notes: this.props.notes
   }
+  
   componentDidUpdate(prevProps) {
     if(prevProps.notes !== this.props.notes) {
       this.setState({notes: this.props.notes})

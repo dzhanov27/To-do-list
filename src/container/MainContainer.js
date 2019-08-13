@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 
 // import Note from '../component/Note';
-import RouterContainer from '../component/Router'
+import RouterContainer from './RouterContainer'
 import './Main.css'
 
 class MainContainer extends React.Component {

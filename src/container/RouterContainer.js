@@ -1,10 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-import All from './All'
-import Complete from './Complete'
-import Incomplete from './Incomplete'
-import Search from './Search'
+import All from '../component/All'
+import Search from '../component/Search'
 import '../container/Main.css'
 
 class RouterContainer extends React.Component {
@@ -23,11 +21,11 @@ class RouterContainer extends React.Component {
 
   showComplete = () => {
     let arr = this.state.notes.filter(item => item.done === true);
-    return(<Complete notes = {arr} />)
+    return(<All notes = {arr} />)
   }
   showIncomplete = () => {
     let arr = this.state.notes.filter(item => item.done === false);
-    return(<Incomplete notes = {arr} />)
+    return(<All notes = {arr} />)
   }
 
   filterFunc = text => {
