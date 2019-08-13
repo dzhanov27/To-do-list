@@ -11,10 +11,10 @@ class MainContainer extends React.Component {
     this.state = {
       notes: [
         {text: "item 1", done: false},
-        {text: "item 2", done: false},
-        {text: "item 3", done: true},
-        {text: "item 4", done: true},
-      ],
+        {text: "note 2", done: false},
+        {text: "task 3", done: true},
+        {text: "smth 4", done: true},
+        {text: "smth 5", done: true},],
       value: '',
     };
 
@@ -52,7 +52,7 @@ class MainContainer extends React.Component {
   render() {
     return (
         <Fragment>
-          <div className="add__box">
+          <header className="add__box">
             <h1>To-Do App!</h1>
             <p>Add New To-Do</p>
             <input 
@@ -62,7 +62,7 @@ class MainContainer extends React.Component {
             value = { this.state.value }
             onChange={ this.handleInput }/>
             <button onClick={ this.addNote } className="add__button">Add</button>
-          </div> 
+          </header> 
           <RouterContainer notes = { this.state.notes }/>
         </Fragment>
     );

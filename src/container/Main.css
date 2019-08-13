@@ -148,3 +148,16 @@
 .li:hover {
   color: white
 }
+
+.search__input {
+  border: 1px solid rgb(102, 102, 102);
+  border-radius: 2px;
+  font-size: 1rem;
+  padding: 6px 10px;
+  color: #666;
+  width: 30%;
+}
+
+.search__input::placeholder {
+  color: #666;
+}

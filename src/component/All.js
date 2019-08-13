@@ -7,6 +7,12 @@ class All extends React.Component {
   state ={
     notes: this.props.notes
   }
+  componentDidUpdate(prevProps) {
+    if(prevProps.notes !== this.props.notes) {
+      this.setState({notes: this.props.notes})
+      console.log('Updated')
+    }
+  }
 
   deleteNote = index => {
     const data = this.state.notes;
@@ -21,16 +27,17 @@ class All extends React.Component {
     this.setState([data]);
   };
   
-  render(){return(<div className="notes">
-  {this.state.notes.map((item, index) => {
-    return(<Note
-      key = {index}
-      note = {item}
-      deleteNote = {() => this.deleteNote(index)}
-      selectNote = {() => this.selectNote(index)}
-    />
-    );})}
-</div>);}
+  render(){
+    return(<div className="notes">
+        {this.state.notes.map((item, index) => {
+        return(<Note
+          key = {index}
+          note = {item}
+          deleteNote = {() => this.deleteNote(index)}
+          selectNote = {() => this.selectNote(index)}
+        />
+        );})}
+        </div>);}
   
 }
 
