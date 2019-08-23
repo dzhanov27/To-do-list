@@ -1,0 +1,163 @@
+.add__box {
+  background-color: rgb(64, 142, 187);
+  margin: 0px;
+  display: block;
+  width: 100;
+  justify-content: center;
+  color: white;
+  text-align: right;
+  align-items: center;
+  padding-right: 20%;
+  padding-top: 3%;
+  padding-bottom: 5%;
+}
+
+.add__box h1 {
+  font-size: 3rem;
+}
+
+.add__box p {
+  margin: 0;
+  font-weight: 600;
+}
+
+.add__input {
+  position: relative;
+  border: none;
+  margin: 10px;
+  height: 30px;
+  width: 50vw;
+  padding: 7px 10px;
+  border-radius: 6px;
+  color: rgb(64, 142, 187);
+  font-weight: 500;
+  font-size: 16px;
+}
+
+::placeholder {
+  color: rgb(64, 142, 187);
+  opacity: 0.6;
+}
+
+.add__button {
+  position: relative;
+  background-color: transparent;
+  color: white;
+  top: 1px;
+  padding: 8px 15px;
+  border: 1px solid white;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 19px;
+  transition-duration: 0.2s
+}
+
+.add__button:hover {
+  border: 1px solid white;
+  background-color: white;
+  color: rgb(64, 142, 187);
+}
+
+.notes {
+  color: #666;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 6%;
+
+}
+
+.notes p {
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+.note {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  margin-left: 30%;
+  align-items: center;
+}
+
+.note p {
+  font-weight: 400;
+  margin-left: 20px;
+}
+
+.btn {
+  background-color: transparent;
+  border: 1px solid #777;
+  margin: 5px;
+  color: #777;
+  border-radius: 1px;
+  padding: 5px 8px;
+  font-size: 17px;
+  transition-duration: 0.2s;
+}
+
+.btn:hover {
+  background-color: #777;
+  border: 1px solid #777;
+  color: white;
+}
+
+.router {
+  color: #666;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+
+.router p{
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+.router ul {
+  list-style-type: none;
+  display: flex;
+  padding-right: 3%;
+  justify-content: center;
+}
+
+.router li {
+  font-weight: 200;
+  background-color: transparent;
+  border: 1px solid #777;
+  margin: 5px 15px;
+  border-radius: 1px;
+  padding: 10px 17px;
+  font-size: 1.3rem;
+  transition-duration: 0.2s;
+}
+
+.router li:hover {
+  background-color: #777;
+  border: 1px solid #777;
+  color: white
+}
+
+.li {
+  color: #666;
+  text-decoration: none;
+}
+
+.li:hover {
+  color: white
+}
+
+.search__input {
+  border: 1px solid rgb(102, 102, 102);
+  border-radius: 2px;
+  font-size: 1rem;
+  padding: 6px 10px;
+  color: #666;
+  width: 30%;
+}
+
+.search__input::placeholder {
+  color: #666;
+}
